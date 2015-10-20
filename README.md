@@ -27,6 +27,7 @@ Library contains usefull function for processing latitute and lognitude for any 
 ## When use
 
 1.You have two points(latlng) and want calculate distance
+	
 	require_once '/../vendor/autoload.php';
 	use FilipMapLatLng\MapLatLng;
 	$map = new MapLatLng();
@@ -39,6 +40,7 @@ Library contains usefull function for processing latitute and lognitude for any 
 	$distance = $map->distance($lat, $lng, $lat2, $lng2, $unit);
 
 2.You have one point(latlng) and want place many markers on this place and you need to group markers around
+	
 	require_once '/../vendor/autoload.php';
 	use FilipMapLatLng\MapLatLng;
 	$map = new MapLatLng();
