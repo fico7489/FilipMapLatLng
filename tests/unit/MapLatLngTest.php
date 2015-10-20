@@ -44,9 +44,32 @@
 		function testAlgorithmLocations()
 		{
 			$map = new MapLatLng();
-			$distance = $map->algorithm_locations(2, 2, 2);
 			
-			$this->assertEquals(false, $distance);
+			
+			$lat = 45.791691;
+			$lng = 15.978928;
+			$count = 22;
+			$offset = 20;
+			$locations = $map->algorithm_locations($lat, $lng, $count, $offset);
+			
+			$this->assertEquals(22, count($locations));
+			$this->assertEquals('45.791691', $locations[0]['lat']);
+			$this->assertEquals('15.978928', $locations[0]['lng']);
+			
+			$this->assertEquals('45.791691', $locations[1]['lat']);
+			$this->assertEquals('15.979185690135', $locations[1]['lng']);
+			
+			$this->assertEquals('45.791511245815', $locations[2]['lat']);
+			$this->assertEquals('15.978928', $locations[2]['lng']);
+			
+			$this->assertEquals('45.791691', $locations[3]['lat']);
+			$this->assertEquals('15.978670309865', $locations[3]['lng']);
+			
+			$this->assertEquals('45.791870754185', $locations[4]['lat']);
+			$this->assertEquals('15.978928', $locations[4]['lng']);
+			
+			$this->assertEquals('45.791691', $locations[5]['lat']);
+			$this->assertEquals('15.97944338027', $locations[5]['lng']);
 		}
 	}
 

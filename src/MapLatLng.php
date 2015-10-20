@@ -83,7 +83,7 @@ class MapLatLng{
 					$latlng = $this->offset_latlng ( $lat, $lng, $lap * $offset, 0 );
 					$lap++;
 				} else {
-					$latlng = ['lat' => $lat, 'lng' => $lng];
+					$latlng = ['lat' => round($lat, 12), 'lng' => round($lng, 12)];
 				}
 			} else if ($counter % 4 == 1) {
 				$latlng = $this->offset_latlng ( $lat, $lng, 0, $lap * $offset );
@@ -93,7 +93,7 @@ class MapLatLng{
 				$latlng = $this->offset_latlng ( $lat, $lng, 0, $lap * - $offset );
 			}
 			
-			$locations[] = ['lat' => $latlng['lat'], 'lng' => $latlng['lng']];
+			$locations[] = ['lat' => round($latlng['lat'], 12), 'lng' => round($latlng['lng'], 12)];
 			$counter ++;
 		}
 		
