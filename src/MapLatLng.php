@@ -93,7 +93,7 @@ class MapLatLng{
 				$latlng = $this->offset_latlng ( $lat, $lng, 0, $lap * - $offset );
 			}
 			
-			$locations[] = [$latlng['lat'], $latlng['lng']];
+			$locations[] = ['lat' => $latlng['lat'], 'lng' => $latlng['lng']];
 			$counter ++;
 		}
 		
