@@ -37,6 +37,20 @@ class MapLatLng{
 		}
 	}
 	
+	
+	/**
+	 * Function calculates locations around one point latlng in way that locations are placed around(circle) first location
+	 * 
+	 * @param decimal $lat
+	 * @param decimal $lng
+	 * @param number $offset Distance between latlng point
+	 * @return array
+	 */
+	public static function algorithm_locations($lat, $lng, $offset = 15) {
+		
+		return false;
+	}
+	
 }
 
 

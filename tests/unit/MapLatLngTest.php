@@ -5,6 +5,7 @@
 	
 	class MapLatLngTest extends \PHPUnit_Framework_TestCase
 	{
+		
 		function testDistance()
 		{
 			$map = new MapLatLng();
@@ -42,6 +43,14 @@
 			$distance = $map->distance($lat, $lng, $lat2, $lng2, $unit);
 			$distance = round($distance, 4);
 			$this->assertEquals('8830.5683', $distance);
+		}
+		
+		function testAlgorithmLocations()
+		{
+			$map = new MapLatLng();
+			$distance = $map->algorithm_locations(2, 2, 2);
+			
+			$this->assertEquals(false, $distance);
 		}
 	}
 
