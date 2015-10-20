@@ -1,0 +1,24 @@
+{
+	"name": "FilipMapLatLng",
+    "type": "library",
+	"description": "Library contains usefull function for processing latitute and lognitude for any king of maps (google maps, bing ,openstreet etc.).",
+	"keywords": ["maps"],
+	"authors": [
+        {
+            "name": "Filip Horvat",
+            "email": "fico7489@gmail.com",
+            "homepage": "https://github.com/fico7489"
+        }
+    ],
+	"require": {
+        "php": ">=5.5.0",
+		"phpunit/phpunit": "~4.0"
+    },
+	
+	"minimum-stability": "dev",
+	"autoload": {
+        "psr-4": {
+            "FilipMapLatLng\\": "src/"
+        }
+    }
+}
