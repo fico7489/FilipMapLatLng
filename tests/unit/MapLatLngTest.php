@@ -9,10 +9,6 @@
 		function testDistance()
 		{
 			$map = new MapLatLng();
-			$distance = $map->distance(2, 2, 2, 2);
-			
-			$this->assertEquals(null, $distance);
-			
 			
 			$lat = 88.898556;
 			$lng = 67.037852;
