@@ -30,25 +30,26 @@ Library contains usefull function for processing latitute and lognitude for any 
 	
 	require_once '/../vendor/autoload.php';
 	use FilipMapLatLng\MapLatLng;
-	$map = new MapLatLng();
 	
 	$lat = 88.898556;
 	$lng = 67.037852;
 	$lat2 = 38.897147;
 	$lng2 = 77.145;
 	$unit = "K";
+	$map = new MapLatLng();
 	$distance = $map->distance($lat, $lng, $lat2, $lng2, $unit);
 
 2.You have one point(latlng) and want place many markers on this place and you need to group markers around
 	
 	require_once '/../vendor/autoload.php';
 	use FilipMapLatLng\MapLatLng;
-	$map = new MapLatLng();
+	
 	
 	$lat = 45.791691;
 	$lng = 15.978928;
 	$count = 22;
 	$offset = 20;
+	$map = new MapLatLng();
 	$locations = $map->algorithm_locations($lat, $lng, $count, $offset);
 	
 ## Test
