@@ -38,17 +38,66 @@ class MapLatLng{
 	}
 	
 	
+	
+	/**
+	 * Računa nove lat i lng na temelju postojeće i danog offseta prema x i y osi, vraća se polje sa novom lat i lng
+	 * 
+	 * @param decimal $lat
+	 * @param decimal $lon
+	 * @param decimal $dn
+	 * @param decimal $de
+	 * @return array polje sa novimm lat i lng
+	 */
+	private function offset_latlng($lat, $lon, $dn, $de) {
+		$R = 6378137;
+		$Pi = 3.14;
+		
+		$dLat = $dn / $R;
+		$dLon = $de / ($R * cos ( $Pi * $lat / 180 ));
+		
+		$lat2 = $lat + $dLat * 180 / $Pi;
+		$lng2 = $lon + $dLon * 180 / $Pi;
+		
+		return array (
+			'lat' => $lat2,
+			'lng' => $lng2 
+		);
+	}
 	/**
 	 * Function calculates locations around one point latlng in way that locations are placed around(circle) first location
 	 * 
 	 * @param decimal $lat
 	 * @param decimal $lng
-	 * @param number $offset Distance between latlng point
+	 * @param number  $count Count of positions to return
+	 * @param number  $offset Distance between latlng point
 	 * @return array
 	 */
-	public static function algorithm_locations($lat, $lng, $offset = 15) {
+	public function algorithm_locations($lat, $lng, $count, $offset = 15) {
+		$locations = [];
+		$counter = 0;
+		$lap = 1;
 		
-		return false;
+		for ($i = 0; $i < $count; $i++) {
+			if (($counter % 4 == 0)) {
+				if ($counter != 0) {
+					$latlng = $this->offset_latlng ( $lat, $lng, $lap * $offset, 0 );
+					$lap++;
+				} else {
+					$latlng = ['lat' => $lat, 'lng' => $lng];
+				}
+			} else if ($counter % 4 == 1) {
+				$latlng = $this->offset_latlng ( $lat, $lng, 0, $lap * $offset );
+			} else if ($counter % 4 == 2) {
+				$latlng = $this->offset_latlng ( $lat, $lng, $lap * - $offset, 0 );
+			} else if ($counter % 4 == 3) {
+				$latlng = $this->offset_latlng ( $lat, $lng, 0, $lap * - $offset );
+			}
+			
+			$locations[] = [$latlng['lat'], $latlng['lng']];
+			$counter ++;
+		}
+		
+		return $locations;
 	}
 	
 }
