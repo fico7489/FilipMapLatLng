@@ -28,7 +28,12 @@ Library contains usefull function for processing latitute and lognitude for any 
 	$offset = 20;
 	$locations = $map->algorithm_locations($lat, $lng, $count, $offset);
 	
+## Test
 	
+	
+	All code is covered with test (PHPUnit)
+	All test are in /test folder
+
 ## Credits
 	
 Enjoy free in this library :)
