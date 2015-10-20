@@ -3,4 +3,5 @@
 
 <ul>
 	<li><a href="distance.php">Calculate distances</a></li>
+	<li><a href="algorithm.php">Algorithm</a></li>
 </ul>
