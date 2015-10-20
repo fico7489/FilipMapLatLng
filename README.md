@@ -3,10 +3,10 @@ Library contains usefull function for processing latitute and lognitude for any 
 
 ## Installation
 
-1.git clone https://github.com/fico7489/FilipMapLatLng.git
-2.cd FilipMapLatLng
-3.composer install
-4.You can see examples in demo folder
+	1.git clone https://github.com/fico7489/FilipMapLatLng.git
+	2.cd FilipMapLatLng
+	3.composer install
+	4.You can see examples in demo folder
 	
 	
 ## Usage
