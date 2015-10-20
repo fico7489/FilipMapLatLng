@@ -9,7 +9,22 @@ Library contains usefull function for processing latitute and lognitude for any 
 	4.You can see examples in demo folder
 	
 	
-## Usage
+	
+## How use
+	
+	require_once '/../vendor/autoload.php';
+	use FilipMapLatLng\MapLatLng;
+			
+	$lat = '16.16';
+	$lng = '18,18';
+	$count = 15;
+	$offset = 25;
+	
+	$map = new MapLatLng();
+	$locations = $map->algorithm_locations($lat, $lng, $count, $offset);
+	
+	
+## When use
 
 1.You have two points(latlng) and want calculate distance
 
